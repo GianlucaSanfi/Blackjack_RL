@@ -8,12 +8,12 @@ DEPENDENCIES:<br>
 pip install gymnasium==0.28.* numpy matplotlib tqdm
 <br>
 
-TABULAR Q-Learning 
+TABULAR Q-Learning<br> 
 USE in src/tabularQL:<br>
     python TabularQL.py {--episodes [NUM_EPISODES] --alpha [ALPHA] --gamma [GAMMA] --epsilon [EPSILON] --epsilon-decay [E_DECAY]}
 <br>
 
-Deep Q-Learning Neural Network (DQN)
+Deep Q-Learning Neural Network (DQN)<br>
 USE in src/DQN:<br>
     python DQN.py {--episodes [NUM_EPISODES] --alpha [ALPHA] --gamma [GAMMA] --epsilon [EPSILON] --epsilon-decay [E_DECAY]}
 <br>
