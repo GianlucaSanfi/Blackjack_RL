@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 # Path to your file
-filename = "tabularQL/tabular_results.txt"
+filename = "DQN/dqn_results.txt"
 
 data = []
 
@@ -16,7 +16,7 @@ with open(filename, "r") as f:
         if not line:
             continue
         
-        episodes, epsilon, epsilon_decay, gamma, alpha, wins, losses, draws = map(float, line.split(","))
+        episodes, epsilon, epsilon_decay, gamma, alpha, buff_size, minibatch_size, wins, losses, draws = map(float, line.split(","))
 
         total = wins + losses + draws
         win_pct = wins / total * 100
@@ -29,6 +29,8 @@ with open(filename, "r") as f:
             "epsilon_decay": epsilon_decay,
             "gamma": gamma,
             "alpha": alpha,
+            "buff_size": buff_size,
+            "minibatch_size": minibatch_size,
             "wins": wins,
             "losses": losses,
             "draws": draws,
@@ -69,6 +71,8 @@ best_text = (
     f"epsilon_decay = {best['epsilon_decay']}\n"
     f"gamma = {best['gamma']}\n"
     f"alpha = {best['alpha']}\n"
+    f"buff_size = {best['buff_size']}\n"
+    f"minibatch_size = {best['minibatch_size']}\n"
     f"win % = {best['win_pct']:.2f}\n"
     f"loss % = {best['loss_pct']:.2f}\n"
     f"draw % = {best['draw_pct']:.2f}"
@@ -80,5 +84,5 @@ plt.gcf().text(
 )
 
 #plt.show()
-plt.savefig("tabular_results.png", dpi=300, bbox_inches="tight")
+plt.savefig("dqn_results.png", dpi=300, bbox_inches="tight")
 
