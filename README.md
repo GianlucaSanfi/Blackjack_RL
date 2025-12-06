@@ -15,6 +15,11 @@ USE in src/tabularQL:<br>
 
 Deep Q-Learning Neural Network (DQN)<br>
 USE in src/DQN:<br>
-    python DQN.py {--episodes [NUM_EPISODES] --alpha [ALPHA] --gamma [GAMMA] --epsilon [EPSILON] --epsilon-decay [E_DECAY]}
+    python DQN.py {--episodes [NUM_EPISODES] --alpha [ALPHA] --gamma [GAMMA] --epsilon [EPSILON] --epsilon-decay [E_DECAY] --replay-size [BUFFER_SIZE] --batch-size [BATCH_SIZE]}
+   
 <br>
+COMPARATOR of results:<br>
+USE: python comparator.py<br><br>
+Generates an image plotting the best scoring settings of the model.<br>
+Used to estimate the best performance over inserted metrics based on win, loss, draw rates. 
 
