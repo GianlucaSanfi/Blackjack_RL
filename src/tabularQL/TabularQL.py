@@ -318,6 +318,9 @@ def main():
 
     plot_custom_stats(stats, alpha=args.alpha, epsilon=args.epsilon, epsilon_min=args.epsilon_min, epsilon_decay=args.epsilon_decay, gamma=args.gamma, episodes=args.episodes)
 
+    stats = evaluate_agent(env, agent, episodes=args.episodes)
+    print(f"Evaluation: \n   win_rate: {stats["win_rate"]}\n   loss_rate: {stats["loss_rate"]}\n   draw_rate: {stats["draw_rate"]}\n   avg_reward: {stats["avg_reward"]}")
+
     env.close()
 
 if __name__ == "__main__":

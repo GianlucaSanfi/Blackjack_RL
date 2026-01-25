@@ -491,6 +491,9 @@ def main():
          batch_size=args.batch_size
          )
 
+    stats = evaluate_agent(env, agent, episodes=args.episodes)
+    print(f"Evaluation: \n   win_rate: {stats["win_rate"]}\n   loss_rate: {stats["loss_rate"]}\n   draw_rate: {stats["draw_rate"]}\n   avg_reward: {stats["avg_reward"]}")
+
     env.close()
 
 if __name__ == "__main__":
